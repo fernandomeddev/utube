@@ -1,0 +1,65 @@
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--current-line); /* Cor de fundo consistente com o tema */
+  color: var(--foreground); /* Cor do texto */
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--background); /* Linha divisória com o tema */
+}
+
+.custom-table th {
+  background-color: var(--footer); /* Cor do cabeçalho */
+  color: var(--foreground); /* Cor do texto do cabeçalho */
+}
+
+.clickable-row:hover {
+  color: var(--red); /* Cor ao passar o mouse por uma linha */
+  background-color: var(--current-line); /* Realce da linha ao passar o mouse */
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--red); /* Botão de delete na cor vermelha */
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: var(--red); /* Fundo vermelho ao passar o mouse */
+  color: var(--background); /* Texto fica escuro para contraste */
+  cursor: pointer;
+}
+
+/* Estilos para quando a tabela estiver vazia */
+.custom-table td[colspan="3"] {
+  font-style: italic;
+  color: #888; /* Texto para a mensagem de "nenhum item encontrado" */
+  text-align: center;
+}
+
+/* Estilos de responsividade */
+@media (max-width: 768px) {
+  .custom-table th,
+  .custom-table td {
+    padding: 8px; /* Diminui o padding em telas menores */
+    font-size: 14px; /* Ajuste no tamanho da fonte para melhorar legibilidade */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-table th,
+  .custom-table td {
+    padding: 6px; /* Mais compactação para smartphones */
+    font-size: 12px; /* Tamanho da fonte reduzido em dispositivos muito pequenos */
+  }
+
+  .delete-btn {
+    font-size: 12px; /* Botão menor em telas pequenas */
+  }
+}

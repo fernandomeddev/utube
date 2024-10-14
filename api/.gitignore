@@ -1,0 +1,35 @@
+# Ambiente virtual
+.venv
+.env
+
+# Arquivos de cache e compilação do Python
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Configurações sensíveis
+.env
+app.db
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Node.js, caso use front-end com JS
+node_modules/
+
+# Arquivos de compilação
+dist/
+build/
+
+# Migrações (opcional)
+migrations/versions/
+
+# Arquivos de dependências do sistema operacional
+.DS_Store
+Thumbs.db

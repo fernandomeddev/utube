@@ -1,0 +1,91 @@
+.video-player {
+  max-width: 800px; /* Aumenta a largura máxima do player */
+  width: 90%; /* Mantém responsivo com 90% da largura da tela */
+  margin: 0 auto; /* Centraliza o modal */
+  padding: 30px;
+  background-color: var(--current-line);
+  border: 2px solid var(--cyan);
+  border-radius: 8px;
+  color: var(--foreground);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.video-player h2 {
+  font-size: 24px; /* Ajuste para cabeçalho maior */
+  color: var(--foreground);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.video-player iframe {
+  width: 100%; /* Ocupa toda a largura do container */
+  height: 350px; /* Altura ampliada para maior visibilidade */
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.video-details {
+  margin-top: 15px;
+  font-size: 16px;
+  color: var(--foreground);
+}
+
+p {
+  color: var(--red);
+}
+
+.video-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  gap: 5px; /* Espaçamento entre os itens */
+}
+
+.video-actions {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  gap: 10px; /* Espaçamento entre os botões */
+  margin-top: 20px;
+}
+
+button.video-btn {
+  width: 40px; /* Botões quadrados */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--foreground);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.copy-btn {
+  color: black;
+  background-color: var(--cyan);
+}
+
+button.copy-btn:hover {
+  color: black;
+  background-color: var(--green);
+}
+
+button.close-btn {
+  background-color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .video-player iframe {
+    height: 300px; /* Reduz a altura para telas médias */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-player iframe {
+    height: 400px; /* Altura menor para telas pequenas */
+    width: 400px;
+  }
+}
