@@ -11,6 +11,8 @@ def home():
         print(e)
         return jsonify({"message": "service is not running"}), 500
 
+
+# GET
 # Rota para listar todos os videos
 @main_routes.route('/api/urls', methods=['GET'])
 def get_url_info():
@@ -37,6 +39,8 @@ def get_url_by_id(url_id):
     
     return jsonify(response_service), 200
 
+
+#POST
 # Rota para adicionar um novo Url
 @main_routes.route('/api/url', methods=['POST'])
 def add_url():
@@ -54,18 +58,18 @@ def add_url():
             int: Código de status HTTP.
         """
         body = request.get_json()
-        print(request.get_json())
         # Verificar se a URL do YouTube está presente no corpo da requisição
         youtube_url = body.get("url", None)
         if youtube_url is None:
             return jsonify({"error": "YouTube URL is required"}), 400
 
         # Verificar se a URL do YouTube é válida
-        validUrl =  is_valid_youtube_url(youtube_url)
+        validUrl = is_valid_youtube_url(youtube_url)
+        print(validUrl)
         if not validUrl:
             return jsonify({"error": "Invalid YouTube URL"}), 400
-        
-        response_service = add_url_info(validUrl)
+
+        response_service = add_url_info(youtube_url)
         if not response_service['success']:
             return jsonify(response_service), 400
         
@@ -74,6 +78,9 @@ def add_url():
         print(e)
         return str(e), 500
 
+
+
+#DELETE
 # Rota para deletar um url pelo ID
 @main_routes.route('/api/url/<int:url_id>', methods=['DELETE'])
 def delete_url(url_id):

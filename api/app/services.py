@@ -1,66 +1,39 @@
-from pytube import YouTube
+from pytube import YouTube  
 from app.models import UrlModel, db
 
-def is_valid_youtube_url(url):
-    """Verifica se uma determinada URL  uma URL do YouTube vlida.
-
-    Args:
-        url (str): URL a ser verificada.
-
-    Returns:
-        pytube.YouTube: Inst ncia da classe YouTube contendo informa es sobre o v deo,
-            caso a URL seja vlida; False, caso contr rio.
-    """
-
+def is_valid_youtube_url(url, proxies=None):
+    """Verifica se uma determinada URL é uma URL do YouTube válida."""
     try:
-        videoInformationbyURL = YouTube(url)
-        print(videoInformationbyURL)
-        return videoInformationbyURL
-    except:
+        video = YouTube(url, proxies=proxies)
+        video.check_availability()
+        return video
+    except Exception as e:
+        print(f"Erro ao validar a URL: {e}")
         return False
 
 def add_url_info(urlInfo):
-    """Adiciona um novo url.
-
-    Recebe um objeto contendo as informa es do novo url e o adiciona na lista de urls.
-    Caso a URL do YouTube seja fornecida, verifica se ela  vlida.
-
-    Args:
-        urlInfo (pytube.YouTube): Inst ncia da classe YouTube contendo informa es sobre o v deo.
-
-    Returns:
-        dict: Dicion rio contendo as informa es do novo url, ou uma mensagem de erro se a URL do YouTube for inv lida.
-        int: C digo de status HTTP.
-    """
+    print(urlInfo)
+    """Adiciona um novo URL, se for válido."""
     try:
-        newUrlInfo = UrlModel(**{
-            'title': urlInfo.title,
-            'description': urlInfo.description,
-            'views': urlInfo.views,
-            'publish_date': urlInfo.publish_date,
-            'author': urlInfo.author,
-            'length': urlInfo.length,
-            'watch_url': urlInfo.watch_url
-        })
+        if not urlInfo:
+            return {"success": False, "message": "URL do YouTube inválida", "status": 400}
+        
+        newUrlInfo = UrlModel(
+            watch_url=urlInfo
+        )
 
         db.session.add(newUrlInfo)
         db.session.commit()
 
-        data = {
+        return {
             "success": True,
-            "data": {
-                "id": newUrlInfo.id,
-                **{key: value for key, value in newUrlInfo.__dict__.items() if not key.startswith('_')}
-            }
+            "data": {"id": newUrlInfo.id, **{key: value for key, value in newUrlInfo.__dict__.items() if not key.startswith('_')}},
+            "status": 200
         }
-        return data
     except Exception as e:
-        data = {
-            "success": False,
-            "data": str(e),
-            "message": "Failed to add url"
-        }
-        return data
+        print(f"Erro ao adicionar o URL ao banco: {e}")
+        return {"success": False, "message": "Failed to add url", "error": str(e), "status": 500}
+
 
 def list_urls():
     """Lista todos os urls cadastrados.

@@ -53,7 +53,7 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-#### 5. Configure o banco de dados:
+#### 5. Configure o banco de dados (OPCIONAL):
 
 Se você estiver usando o **Flask-Migrate** para gerenciar migrações, execute os seguintes comandos para configurar o banco de dados:
 
