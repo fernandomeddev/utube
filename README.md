@@ -1,7 +1,7 @@
-# UTUBE Application - README
+# UTUBE V.0.4.1 Application - README
 
 ## Descrição
-
+(ULTIMA ATUALIZAÇÃO: TENDO EM VISTA A UTILIZAÇÃO DO PYTUBE QUE É UMA API GRATUITA COM ALGUMAS LIMITAÇÕES, PRECISEI FAZER ALGUNS DOWNGRADES PARA QUE O APP APRESENTE SUA MELHOR PERFORMANCE. )
 Este é um projeto de uma aplicação web para criar, visualizar e gerenciar uma playlist de vídeos do YouTube. Os usuários podem adicionar URLs de vídeos, visualizar informações sobre os vídeos e remover vídeos da lista. A aplicação utiliza **React** para o frontend e se conecta a uma **API** construída em **Flask** para gerenciar a lista de URLs.
 
 O projeto foi desenvolvido para armazenar informações de vídeos do YouTube usando o framework **pytube**, e a API gerencia URLs enquanto o front-end permite a interação com esses dados.
