@@ -108,10 +108,6 @@ function App() {
         >
           {selectedUrl && (
             <VideoPlayer
-              title={selectedUrl.title}
-              views={selectedUrl.views}
-              publish_date={selectedUrl.publish_date}
-              author={selectedUrl.author}
               watch_url={selectedUrl.watch_url}
             />
           )}

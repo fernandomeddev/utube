@@ -3,20 +3,17 @@ import "./styles.css"; // Estilos atualizados com ícones
 import { toast } from "react-toastify";
 
 function VideoPlayer({
-  title,
-  views,
-  publish_date,
-  author,
+  title="Título do Vídeo",
+  author='Autor',
   watch_url,
-  onClose,
 }) {
   const handleCopyLink = () => {
     navigator.clipboard.writeText(watch_url);
     toast.success("Link copiado para a área de transferência!");
   };
 
-  const date = new Date(publish_date);
-  const formattedDate = date.toISOString().split('T')[0]; // '2024-10-13'
+  // const date = new Date(publish_date);
+  // const formattedDate = date.toISOString().split('T')[0]; // '2024-10-13'
   return (
     <div className="video-player">
       <h2>{title}</h2>
@@ -33,15 +30,17 @@ function VideoPlayer({
 
       <div className="video-details">
         <div className="video-info">
+          {/*
+            NOVA VERSÃO COM A API DO YOUTUBE 
           <span className="video-icon">
             <i className="fas fa-eye"><p>{views}</p></i>
           </span>
           <span className="video-icon">
-            <i className="fas fa-calendar-alt"><p>{formattedDate}</p></i>
+            <i className="fas fa-calendar-alt"><p>{publish_date}</p></i>
           </span>
           <span className="video-icon">
             <i className="fas fa-user"><p>{author}</p></i>
-          </span>
+          </span> */}
         </div>
       </div>
 
