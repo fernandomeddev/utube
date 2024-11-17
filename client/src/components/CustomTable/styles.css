@@ -1,5 +1,7 @@
 .custom-table {
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-collapse: collapse;
   background-color: var(--current-line); /* Cor de fundo consistente com o tema */
   color: var(--foreground); /* Cor do texto */
@@ -7,8 +9,9 @@
 
 .custom-table th,
 .custom-table td {
-  padding: 10px;
-  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
   border-bottom: 1px solid var(--background); /* Linha divisória com o tema */
 }
 
@@ -17,15 +20,16 @@
   color: var(--foreground); /* Cor do texto do cabeçalho */
 }
 
+
 .clickable-row:hover {
   color: var(--red); /* Cor ao passar o mouse por uma linha */
-  background-color: var(--background); /* Realce da linha ao passar o mouse */
+  background-color: var(--footer); /* Realce da linha ao passar o mouse */
   cursor: pointer;
 }
 
 .delete-btn {
-  background-color: transparent;
   border: none;
+  background-color: transparent;
   color: var(--red); /* Botão de delete na cor vermelha */
   cursor: pointer;
 }
@@ -49,6 +53,12 @@
   .custom-table td {
     padding: 8px; /* Diminui o padding em telas menores */
     font-size: 14px; /* Ajuste no tamanho da fonte para melhorar legibilidade */
+  }
+
+  .delete-btn:hover {
+    background-color: var(--red); /* Fundo vermelho ao passar o mouse */
+    color: var(--background); /* Texto fica escuro para contraste */
+    cursor: pointer;
   }
 }
 

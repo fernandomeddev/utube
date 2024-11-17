@@ -23,7 +23,7 @@ function App() {
         const data = await getUrls();
         setUrls(data);
       } catch (error) {
-        toast.error("Não foi possível obter as URLs. Por favor, tente novamente mais tarde.");
+        toast.error("Serviço indisponível. Por favor, tente novamente mais tarde.");
       }
     };
 
@@ -77,8 +77,6 @@ function App() {
       </div>
       
       <div className="App">
-        <ToastContainer />
-
         {view === "add" && (
           <Section title="UTUBE ">
             <div>
@@ -89,7 +87,7 @@ function App() {
                 placeholder="Insira a URL do YouTube"
                 style={{ width: "300px", marginRight: "10px" }}
               />
-              <button onClick={handleAddUrl}>Adicionar URL</button>
+              <button className="add-button" onClick={handleAddUrl}>Adicionar URL</button>
             </div>
           </Section>
         )}
@@ -112,6 +110,7 @@ function App() {
             />
           )}
         </Modal>
+        <ToastContainer className={"toast-container"}  style={{ width: "800px" }}/>
       </div>
       <div className="footer-container">
         <footer className="app-footer">

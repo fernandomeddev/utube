@@ -8,7 +8,7 @@ function CustomTable({ urls, onDeleteUrl, onSelectUrl }) {
         <tr>
           <th>Id</th>
           <th>Url</th>
-          <th></th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
