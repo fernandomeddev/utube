@@ -23,7 +23,7 @@ function App() {
         const data = await getUrls();
         setUrls(data);
       } catch (error) {
-        toast.error("Serviço temporariamente indisponível. Tente novamente mais tarde.");
+        toast.error("Não foi possível obter as URLs. Por favor, tente novamente mais tarde.");
       }
     };
 

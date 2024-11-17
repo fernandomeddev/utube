@@ -3,8 +3,6 @@ import "./styles.css"; // Estilos atualizados com ícones
 import { toast } from "react-toastify";
 
 function VideoPlayer({
-  title="Título do Vídeo",
-  author='Autor',
   watch_url,
 }) {
   const handleCopyLink = () => {
@@ -16,13 +14,11 @@ function VideoPlayer({
   // const formattedDate = date.toISOString().split('T')[0]; // '2024-10-13'
   return (
     <div className="video-player">
-      <h2>{title}</h2>
       <div className="video-wrapper">
         <iframe
           className="video-iframe"
           src={watch_url.replace("watch?v=", "embed/")}
           title="YouTube video player"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>

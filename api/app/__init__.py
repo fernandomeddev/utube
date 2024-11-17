@@ -1,8 +1,11 @@
 from flask import Flask
 from flask_cors import CORS
 from app.routes import main_routes
-from app.models import db
+from .models.UrlModel import db
 from config import Config
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 def create_app():
     """Cria a aplicação Flask e registra os blueprints.

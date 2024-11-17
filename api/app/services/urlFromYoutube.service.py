@@ -1,5 +1,5 @@
 from pytube import YouTube  
-from app.models import UrlModel, db
+from api.app.models.UrlModel import UrlModel, db
 
 def is_valid_youtube_url(url, proxies=None):
     """Verifica se uma determinada URL é uma URL do YouTube válida."""
@@ -33,7 +33,6 @@ def add_url_info(urlInfo):
     except Exception as e:
         print(f"Erro ao adicionar o URL ao banco: {e}")
         return {"success": False, "message": "Failed to add url", "error": str(e), "status": 500}
-
 
 def list_urls():
     """Lista todos os urls cadastrados.

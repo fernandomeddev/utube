@@ -1,21 +1,18 @@
-# UTUBE V.0.4.1 Application - README
+# UTUBE Application - README
 
 ## Descrição
-(ULTIMA ATUALIZAÇÃO: TENDO EM VISTA A UTILIZAÇÃO DO PYTUBE QUE É UMA API GRATUITA COM ALGUMAS LIMITAÇÕES, PRECISEI FAZER ALGUNS DOWNGRADES PARA QUE O APP APRESENTE SUA MELHOR PERFORMANCE. )
-Este é um projeto de uma aplicação web para criar, visualizar e gerenciar uma playlist de vídeos do YouTube. Os usuários podem adicionar URLs de vídeos, visualizar informações sobre os vídeos e remover vídeos da lista. A aplicação utiliza **React** para o frontend e se conecta a uma **API** construída em **Flask** para gerenciar a lista de URLs.
-
-O projeto foi desenvolvido para armazenar informações de vídeos do YouTube usando o framework **pytube**, e a API gerencia URLs enquanto o front-end permite a interação com esses dados.
+Este é um projeto de uma aplicação web para criar, visualizar e gerenciar uma playlist de vídeos do YouTube. Os usuários podem adicionar URLs de vídeos, visualizar e remover os vídeos da lista. A aplicação utiliza **React** no frontend e se conecta a uma **API** construída em **Flask** (python) para gerenciar a lista de URLs.
 
 ---
 
 ## Funcionalidades
 
 - **Adicionar vídeos**: Insira uma URL do YouTube e adicione vídeos à playlist.
-- **Visualizar vídeos**: Exibe o título, autor e outras informações dos vídeos.
+- **Visualizar vídeos**: Na Página inicial Exibe a lista de urls caso exista alguma url salva.
 - **Remover vídeos**: Opção de excluir vídeos da playlist.
 - **Modal de vídeo**: Ao selecionar um vídeo, ele é exibido em um modal, com a possibilidade de fechá-lo.
 - **Notificações**: Feedback para ações como adicionar, excluir ou falha ao processar URLs, usando `react-toastify`.
-- **Listagem de URLs**: A API retorna uma lista de URLs salvas, permitindo que os vídeos possam ser acessados ou removidos.
+- **Video Player**: Ao Selecionar uma url é possivel assistir o video sem precisar ser redirecionado para o YOUTUBE.
   
 ---
 
@@ -30,7 +27,6 @@ O projeto foi desenvolvido para armazenar informações de vídeos do YouTube us
 - **Font Awesome**: Ícones de ações.
 
 ### Backend (API)
-
 - **Flask**: Microframework Python para construção da API.
 - **SQLAlchemy**: ORM para banco de dados relacional.
 - **Pytube**: Biblioteca para manipulação e extração de informações de vídeos do YouTube.
@@ -70,7 +66,7 @@ root
 
 ### Passo a passo
 
-1. **Clone o repositório (opcional):**
+1. **Clone o repositório:**
 
    Se você deseja clonar o projeto usando Git, rode o seguinte comando no terminal:
 
@@ -87,7 +83,7 @@ root
    npm install
    ```
 
-3. **Inicie o servidor de desenvolvimento do frontend:**
+3. **Iniciando o frontend Localmente:**
 
    Após a instalação das dependências, execute o seguinte comando para iniciar o frontend em ambiente de desenvolvimento:
 
@@ -98,7 +94,6 @@ root
    A aplicação estará acessível no navegador pelo endereço: `http://localhost:3000`.
 
 4. **Instale as dependências do backend (Flask):**
-
    Agora, volte para o diretório principal do projeto e entre no diretório da API:
 
    ```bash

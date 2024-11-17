@@ -19,7 +19,7 @@
 
 .clickable-row:hover {
   color: var(--red); /* Cor ao passar o mouse por uma linha */
-  background-color: var(--current-line); /* Realce da linha ao passar o mouse */
+  background-color: var(--background); /* Realce da linha ao passar o mouse */
   cursor: pointer;
 }
 

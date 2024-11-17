@@ -6,8 +6,8 @@ function CustomTable({ urls, onDeleteUrl, onSelectUrl }) {
     <table className="custom-table">
       <thead>
         <tr>
-          <th>Id ou Título</th>
-          <th>Detalhes do video</th>
+          <th>Id</th>
+          <th>Url</th>
           <th></th>
         </tr>
       </thead>
@@ -20,8 +20,8 @@ function CustomTable({ urls, onDeleteUrl, onSelectUrl }) {
               className="clickable-row"
             >
               {/* NA NOVA VERSAO COM API DO YOUTUBE COLOCAR MAIS INFORMAÇÕES */}
-              <td data-label="Id ou Título">{video.title || video.id}</td>
-              <td data-label="Autor">{video.author || "Não informado"}</td>
+              <td data-label="Id ou Título">{video.id}</td>
+              <td data-label="Autor">{video.watch_url || "Não informado"}</td>
               <td data-label="Ações">
                 <button
                   className="delete-btn"

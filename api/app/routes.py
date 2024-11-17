@@ -1,5 +1,10 @@
+from .utils.validateUrl import is_valid_youtube_url
+from .services.addUrl import add_url_info
+from .services.listUrls import list_urls
+from .services.showUrl import get_url_by_id_service
+from .services.removeUrl import delete_url_service
+
 from flask import Blueprint, jsonify, request # type: ignore
-from app.services import add_url_info, delete_url_service, get_url_by_id_service, is_valid_youtube_url, list_urls
 
 main_routes = Blueprint('main', __name__)
 
@@ -16,7 +21,7 @@ def home():
 # Rota para listar todos os videos
 @main_routes.route('/api/urls', methods=['GET'])
 def get_url_info():
-    response_service =  list_urls()
+    response_service = list_urls()
     if not response_service['success']:
         return jsonify(response_service), 404
     
@@ -65,15 +70,15 @@ def add_url():
 
         # Verificar se a URL do YouTube é válida
         validUrl = is_valid_youtube_url(youtube_url)
-        print(validUrl)
         if not validUrl:
-            return jsonify({"error": "Invalid YouTube URL"}), 400
+            return jsonify({"error": "Invalid URL"}), 400
 
         response_service = add_url_info(youtube_url)
         if not response_service['success']:
             return jsonify(response_service), 400
         
         return jsonify(response_service), 200
+    
     except Exception as e:
         print(e)
         return str(e), 500

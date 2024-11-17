@@ -64,6 +64,8 @@ button.video-btn {
 }
 
 button.copy-btn {
+  margin-top: -40px;
+  width: 100px;
   color: black;
   background-color: var(--cyan);
 }
