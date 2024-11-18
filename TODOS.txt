@@ -5,9 +5,9 @@ Desafio
 [x] - Recuperar a URL e tocar através da solução;
 [x] - Deletar a URL.
 Informações que deveram estar contidas no release notes:
-[] - Listar as funcionalidades;
-[] - Bugs ou observações;
-[] - Pontos de melhorias ou evoluções.
+[x] - Listar as funcionalidades;
+[x] - Bugs ou observações;
+[x] - Pontos de melhorias ou evoluções.
 OBS:
 [] - Criar um documento com o passo a passo para deploy e uso da solução.
 [x] - A solução Front-end deverá ser feita em JS (pode utilizar framework);
